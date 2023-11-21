@@ -63,10 +63,11 @@ class CategoryController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(CategoryRequest $request, Category $category)
+   public function update(CategoryRequest $request, Category $category)
     {
         try {
-            $data = $category->update();
+            $validated  = $request->validated();
+            $data = $category->update($validated);
             return response()->json(['status' => true, 'message' => ' update data sukses', 'data' => $data]);
         } catch (Exception | PDOException $e) {
             return response()->json(['status' => false, 'message' => 'gagal update data', 'error_type' => $e]);

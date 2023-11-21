@@ -6,7 +6,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Contracts\Validation\Validator;
 
-class StoreStokRequest extends FormRequest
+class MenuRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,11 @@ class StoreStokRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'menu_id' => 'required',
-            'jumlah' => 'required',
+            'nama_menu' => 'required',
+            'harga' => 'required',
+            'image' => 'required',
+            'deskripsi' => 'required',
+            'jenis_id' => 'required'
         ];
     }
 

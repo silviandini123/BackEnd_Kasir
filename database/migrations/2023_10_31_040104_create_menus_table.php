@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_menu', 255);
             $table->double('harga');
+            $table->string('image', 255);
             $table->string('deskripsi', 255);
             $table->timestamps();
         });

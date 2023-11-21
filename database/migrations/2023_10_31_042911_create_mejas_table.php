@@ -13,11 +13,9 @@ return new class extends Migration
     {
         Schema::create('mejas', function (Blueprint $table) {
             $table->id();
-            $table->date('tanggal_pemesanan');
-            $table->time('jam_mulai');
-            $table->time('jam_selesai');
-            $table->string('nama_pemesan');
-            $table->integer('jumlah_pelanggan');
+            $table->integer('nomor_meja');
+            $table->integer('kapasitas');
+            $table->string('status', 255);
             $table->timestamps();
             // $table->foreign('meja_id')->references('id')->on('mejas');
         });

@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Jenis extends Model
 {
     use HasFactory;
+
+     protected $table = 'jenis';
+     protected $fillable = ['kategori_id', 'nama_jenis'];
 }
